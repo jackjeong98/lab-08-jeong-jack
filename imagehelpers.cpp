@@ -115,7 +115,7 @@ void revert_inverted(int image[MAX_H][MAX_W], int &h, int &w){
 			maxDimensions[row][col] = abs(image[row][col]-255);
 		}
 	}
-	writeImage(maxDimensions, h, w, "aqibedits.pgm");
+	writeImage("aqibedits.pgm", maxDimensions, h, w);
 }
 
 void invert_half(int image[MAX_H][MAX_W], int &height, int &width){
