@@ -15,6 +15,10 @@ int main() {
   // and the 2-dimesional array img contains the image data
 
   invert(img, h, w);
+
+  //aqib edits function
+  revert_inverted(img, h, w);
+  
   invert_half(img, h, w);
   box(img, h, w);
   frame(img, h, w);
