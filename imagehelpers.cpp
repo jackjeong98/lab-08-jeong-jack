@@ -79,6 +79,7 @@ void writeImage(string file,int image[MAX_H][MAX_W], int height, int width) {
 	ostr.close();
 	return;
 }
+
 void invert(int image[MAX_H][MAX_W], int &height, int &width){
 	int copy[MAX_H][MAX_W];
 	int originalHeight = height;
@@ -89,7 +90,6 @@ void invert(int image[MAX_H][MAX_W], int &height, int &width){
 			copy[row][col] = 255 - image[row][col];
 		}
 	}
-
 	// Now we can manipulate the image the way we like
 	// for example we copy its contents into a new array
 	int out[MAX_H][MAX_W];
@@ -104,6 +104,18 @@ void invert(int image[MAX_H][MAX_W], int &height, int &width){
 	writeImage("taska.pgm", out, height, width);
 	height = originalHeight;
 	width = originalWidth;
+}
+
+//aqibedits function, used my code
+//reverts an inverted image to the original image
+void revert_inverted(int image[MAX_H][MAX_W], int &h, int &w){
+	int maxDimensions[MAX_H][MAX_W];
+	for(int row = 0; row < h; row++) {
+		for(int col = 0; col < w; col++) {
+			maxDimensions[row][col] = abs(image[row][col]-255);
+		}
+	}
+	writeImage("aqibedits.pgm", maxDimensions, h, w);
 }
 
 void invert_half(int image[MAX_H][MAX_W], int &height, int &width){
