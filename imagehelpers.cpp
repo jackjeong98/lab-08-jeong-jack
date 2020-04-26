@@ -107,6 +107,7 @@ void invert(int image[MAX_H][MAX_W], int &height, int &width){
 }
 
 //aqibedits function, used my code
+//reverts an inverted image to the original image
 void revert_inverted(int image[MAX_H][MAX_W], int &h, int &w){
 	int maxDimensions[MAX_H][MAX_W];
 	for(int row = 0; row < h; row++) {
